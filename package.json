@@ -1,0 +1,25 @@
+{
+  "name": "bruhbot",
+  "version": "1.0.0",
+  "description": "The main bot used on bit.ly/bruhdiscord",
+  "main": "BruhBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuhJuhButts/BruhBot.git"
+  },
+  "keywords": [
+    "bruh"
+  ],
+  "author": "JuhJuhButts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JuhJuhButts/BruhBot/issues"
+  },
+  "homepage": "https://github.com/JuhJuhButts/BruhBot#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}
