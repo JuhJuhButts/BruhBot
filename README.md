@@ -4,5 +4,5 @@
 ## To-do list:
 - Punishment system (kick, ban, etc.) and hall of fame
 - help command
-- fun stuff like polls and games
+- fun stuff like polls and games   
 If you have an idea for BruhBot, head over to issues.
