@@ -13,10 +13,10 @@ bot.on('message', message => {
 
 	switch(command) {
 		case '-purpose':
-			message.channel.send('You don\'t have a purpose either. Shut up, ' + message.author + '.').catch(err => {
+			message.channel.send('You don\'t have a purpose either. Shut up, ' + message.author).catch(err => {
 				console.error(err);
-				message.channel.send('there was an error trying to execute that command. Try again or just admit that you\'re a dumbass.');
-			});;
+				message.channel.send('There was an error trying to execute that command. Try again or just admit that you\'re a dumbass.');
+			});
 			break;
 		case 'args-info':
 			
