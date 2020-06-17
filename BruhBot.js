@@ -1,15 +1,27 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const config = require('./config.json');
+const { prefix, token } = require('./config.json');
 
 bot.once('ready', () => {
 	console.log('Login successful.');
 });
 
-client.on('message', message => {
-	if (message.content === '!ping') {
-		message.channel.send('Pong.');
-	}
-});
+bot.on('message', message => {
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
+	const args = message.content.slice(prefix.length).split(' ');
+	const command = args.shift().toLowerCase();
 
-bot.login(config.token);
+	switch(command) {
+		case '-purpose':
+			message.channel.send('You don\'t have a purpose either. Shut up, ' + message.author + '.').catch(err => {
+				console.error(err);
+				message.channel.send('there was an error trying to execute that command. Try again or just admit that you\'re a dumbass.');
+			});;
+			break;
+		case 'args-info':
+			
+		default:
+			message.channel.send(':moyai: that\'s not even a valid command what\'s wrong with you')
+}});
+
+bot.login(token);
