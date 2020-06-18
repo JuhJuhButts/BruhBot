@@ -8,3 +8,12 @@
   
   
 If you have an idea for BruhBot, head over to issues and make a feature request.
+
+## Command documentation:  
+  
+```--role```  
+Aliases: ```-r```, ```-+role```  
+Description: Add or remove own roles. If user has "Manage Roles" perms, can edit other user's roles.  
+Required arguments: \<function>, \<role>, \<target>  
+Argument definitions: function (```add``` or ```remove```), role (any applicable role), target (empty for self or mention of target member)  
+Example usage: ```--role add Elliot-Alderson``` to grant "Elliot Alderson" to self; ```--role remove Can-do-pornhub-live @Member#0000``` to remove "Can do pornhub live" from @Member#0000
