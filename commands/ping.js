@@ -4,7 +4,10 @@ module.exports = {
 	aliases: ['p'],
 	guildOnly: false,
 	args: false,
-	execute(message, args) {
-		message.channel.send('Pong!')
+	execute(message, args, Discord) {
+		const { pingReplies } = require(`./randomMessages.json`);
+		const randomMessage = pingReplies[Math.floor(Math.random() * pingReplies.length)];
+
+		message.channel.send(randomMessage)
 	},
 };

@@ -4,7 +4,9 @@ module.exports = {
 	description: 'Tells you what things there are and what the thing does.',
 	aliases: ['h'],
 	usage: '[command name]',
-	execute(message, args) {
+	execute(message, args, Discord) {
+        const { errorReplies } = require(`../errors.json`);
+        const randomError = errorReplies[Math.floor(Math.random() * errorReplies.length)];
         const data = [];
         const { commands } = message.client;
         if (!args.length) {
@@ -13,15 +15,23 @@ module.exports = {
             data.push(`\nSend \`${prefix}help [thing]\` to get info on a specific thing`);
             return message.channel.send(data, { split: true })
 				.catch(error => {
-					console.error(`Could not send help ${message.author.tag}.\n`, error);
-                    message.reply('I ran into an error. Must\'ve left my glasses at home.');
+                    console.log(error);
+                    message.channel.send(randomError);
                 });
         }
 
         const name = args[0].toLowerCase();
         const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
         if (!command) {
-            return message.reply(':moyai: that\'s not even a valid command');
+            const embed = new Discord.MessageEmbed()
+                .setTitle('File an issue')
+                .setURL('https://joelne.digital/BBissue')
+                .setColor('#ff0000')
+                .setAuthor(message.author.tag, message.author.avatarURL())
+                .setDescription(errorReplies[Math.floor(Math.random() * errorReplies.length)])
+                .addField('Error:', 'Command not found', true);
+            message.channel.send(embed);
+            return;
         }
 
         data.push(`**Name:** ${command.name}`);
@@ -30,7 +40,6 @@ module.exports = {
         if (command.description) data.push(`Description: ${command.description}`);
         if (command.usage) data.push(`Usage: ${prefix}${command.name} ${command.usage}`);
 
-        data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
 
         message.channel.send(data, { split: true });
 	},
