@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'ban',
 	description: 'Bans target from The Bruh Chat',
-	aliases: ['b', 'an'],
+	aliases: ['an'],  /*because b/an*/
 	guildOnly: true,
 	args: true,
 	execute(message, args, Discord) {

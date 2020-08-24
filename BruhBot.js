@@ -13,7 +13,7 @@ for (const file of commandFiles) {
 }
 
 bot.once(`ready`, () => {
-	bot.user.setActivity('your complaining on joelne.digital/BBissue', { type: 'LISTENING' });
+	bot.user.setActivity('Minecraft (do not disturb!!!!!!!!!)) ');
 	console.log(`I'm in.`);
 });
 
