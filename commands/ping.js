@@ -12,7 +12,7 @@ module.exports = {
 		let now = new Date();
 		let ping = now.getTime() - then.getTime();
 		const embed = new Discord.MessageEmbed()
-			.setColor('#0000ff')
+			.setColor('#03b1fc')
 			.setTitle('Pong')
 			.setDescription(randomMessage)
 			.addField('Ping (ms)', ping, true);

@@ -8,7 +8,7 @@ module.exports = {
 		const randomMessage = purposeReplies[Math.floor(Math.random() * purposeReplies.length)];
 		const embed = new Discord.MessageEmbed()
 			.setTitle('My Purpose')
-			.setColor('#0000ff')
+			.setColor('#03b1fc')
 			.setDescription(randomMessage);
 		message.channel.send(embed)
 	},

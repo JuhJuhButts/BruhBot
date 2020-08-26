@@ -12,7 +12,7 @@ module.exports = {
           const embed1 = new Discord.MessageEmbed()
            .setTitle('Stuff you can do with me')
            .setColor('#0000ff')
-           .setDescription('Send \`${prefix}help [thing]\` to get info on a specific command')
+           .setDescription(`Send \`${prefix}help [thing]\` to get info on a specific command`)
            .addField('Commands', commands.map(command => command.name).join('\n '), true);
           message.channel.send(embed1)
 				.catch(error => {

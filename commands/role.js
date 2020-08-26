@@ -35,6 +35,5 @@ module.exports = {
             }
         }
         message.channel.send(embed);
-        return;
 	},
 };
