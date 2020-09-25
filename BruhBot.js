@@ -4,7 +4,6 @@ const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 const { prefix, token } = require(`./info/config.json`);
 const { errorReplies } = require(`./info/errors.json`);
-
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
@@ -13,7 +12,7 @@ for (const file of commandFiles) {
 }
 
 bot.once(`ready`, () => {
-	bot.user.setActivity('Minecraft (do not disturb!!!!!!!!!)) ');
+	bot.user.setActivity('Sonic Underground', { type: 'WATCHING' });
 	console.log(`I'm in.`);
 });
 
@@ -32,22 +31,44 @@ bot.on(`message`, message => {
 			.setColor('#ff0000')
 			.setAuthor(message.member.nickname, message.author.avatarURL())
 			.setDescription(errorReplies[Math.floor(Math.random() * errorReplies.length)])
-			.addField('Error:', 'Command not found', true);
+			.addField('Error:', 'Command not found/invalid syntax', true);
 		message.channel.send(embed)
 		return;
 	}
 
 	if (command.guildOnly && message.channel.type !== 'text') {
-		return message.channel.send('lmao bro I don’t want to date you get out of my DMs');
+		message.channel.send(new Discord.MessageEmbed()
+			.setTitle('File an issue')
+			.setURL('https://joelne.digital/BBissue')
+			.setColor('#ff0000')
+			.setAuthor(message.member.nickname, message.author.avatarURL())
+			.setDescription('lmao bro I don’t want to date you get out of my DMs')
+			.addField('Error:', 'Cannot execute command in DMs', true));
+		return;
 	}
 
 	if (command.args && !args.length) {
-		let reply = `That's a pretty weak argument.`
+		const embed = new Discord.MessageEmbed()
+			.setTitle('File an issue')
+			.setURL('https://joelne.digital/BBissue')
+			.setColor('#ff0000')
+			.setAuthor(message.member.nickname, message.author.avatarURL())
+			.setDescription(errorReplies[Math.floor(Math.random() * errorReplies.length)])
+			.addField('Error:', 'Insufficient information', true);
 
 		if (command.usage) {
-			reply += `\nThis is how to do it right: \`${prefix}${command.name} ${command.usage}\``
+			embed.addField('Usage:', prefix + command.name + command.usage);
 		}
-		message.channel.send(reply);
+		message.channel.send(embed).catch((error) => {
+			const embed = new Discord.MessageEmbed()
+				.setTitle('File an issue')
+				.setURL('https://joelne.digital/BBissue')
+				.setColor('#ff0000')
+				.setAuthor(message.member.nickname, message.author.avatarURL())
+				.setDescription(errorReplies[Math.floor(Math.random() * errorReplies.length)])
+				.addField('Error:', error, true);
+			message.channel.send(embed);
+		});
 		return;
 	}
 
@@ -63,6 +84,7 @@ bot.on(`message`, message => {
 			.addField('Error:', error, true);
 		console.error(error);
 		message.channel.send(embed);
-}});
+	}
+});
 
 bot.login(token);
