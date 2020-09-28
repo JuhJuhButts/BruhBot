@@ -15,7 +15,6 @@ module.exports = {
                 .setDescription(errorReplies[Math.floor(Math.random() * errorReplies.length)])
                 .addField('Error:', 'Insufficient permissions', true);
             message.channel.send(embed);
-            return;
         }
     },
 };

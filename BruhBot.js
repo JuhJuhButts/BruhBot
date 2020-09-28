@@ -73,7 +73,7 @@ bot.on(`message`, message => {
 	}
 
 	try {
-		command.execute(message, args, Discord);
+		command.execute(message, args, Discord, info);
 	} catch (error) {
 		const embed = new Discord.MessageEmbed()
 			.setTitle('File an issue')

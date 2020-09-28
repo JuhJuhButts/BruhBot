@@ -3,7 +3,7 @@ module.exports = {
     description: 'Tournament commands. Creating a bracket is limited to @MasterOfPasta#9454 and @JuhJuhButt#3484. ',
     aliases: ['t', 'tourney', 'tournement', 'turnament', 'turnement', 'tournamant', 'tournement'],
     args: true,
-    usage: '` <bracket || fighter || group || battle> <subcommand> <args(if applicable)>` Subcommands',
+    usage: 'Way too much, use `/tournament help` instead',
     execute(message, args, Discord) {
         const fs = require('fs');
         switch (args[0]) {
@@ -28,7 +28,7 @@ module.exports = {
                                 "fighterAmount": fA,
                                 "isBoss": iB
                             }
-                            const bracketWrite = JSON.stringify(bracket);
+                            const bracketWrite = JSON.stringify(bracket, null, 4);
                             fs.writeFile('../info/tournament/bracket.json', bracketWrite, err => {
                                 if (err) {
                                     const embed = new Discord.MessageEmbed()
