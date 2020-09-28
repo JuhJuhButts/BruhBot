@@ -2,7 +2,6 @@ module.exports = {
 	name: 'ping',
 	description: 'Ping!',
 	aliases: ['p'],
-	guildOnly: false,
 	args: false,
 	execute(message, args, Discord) {
 		const { pingReplies } = require(`../info/randomMessages.json`);

@@ -1,26 +1,25 @@
 module.exports = {
-	name: 'role',
-	description: 'add or remove a role',
+    name: 'role',
+    description: 'add or remove a role',
     aliases: ['r'],
-    usage: '(+ or -) <role>',
-	guildOnly: true,
-	args: true,
-	execute(message, args, Discord) {
+    usage: '<+ | -> <role>',
+    args: true,
+    execute(message, args, Discord) {
         const JsonFind = require('json-find');
         const { allowed } = require('../info/selfRoles.json');
         const role = JsonFind(allowed).checkKey(args[1]);
         const { errorReplies } = require('../info/errors.json');
-		const embed = new Discord.MessageEmbed()
+        const embed = new Discord.MessageEmbed()
             .setTitle('Role')
             .setAuthor(message.member.nickname, message.author.avatarURL());
 
         if (!role) {
             embed
                 .setTitle('File an issue')
-	    		.setURL('https://joelne.digital/BBissue')
-		    	.setColor('#ff0000')
-    			.setDescription(errorReplies[Math.floor(Math.random() * errorReplies.length)])
-	    		.addField('Error:', 'Role not found or unavailable', true);
+                .setURL('https://joelne.digital/BBissue')
+                .setColor('#ff0000')
+                .setDescription(errorReplies[Math.floor(Math.random() * errorReplies.length)])
+                .addField('Error:', 'Role not found or unavailable', true);
         } else {
             if (args[0] === '+') {
                 message.member.roles.add(role, 'self-role');

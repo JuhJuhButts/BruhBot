@@ -1,11 +1,10 @@
 module.exports = {
-	name: 'kill',
-	description: 'Kills BruhBot',
-	guildOnly: false,
-	args: false,
-	execute(message, args, Discord) {
+    name: 'kill',
+    description: 'Kills BruhBot',
+    args: false,
+    execute(message, args, Discord) {
         if (message.author.id === '268138992606773248') {
-            message.channel.send(new Discord.MessageEmbed().setTitle('Rebooting...').setColor('#00ff00')).then(() => {process.exit()});
+            message.channel.send(new Discord.MessageEmbed().setTitle('Rebooting...').setColor('#00ff00')).then(() => { process.exit() });
         } else {
             const { errorReplies } = require('../info/errors.json');
             const embed = new Discord.MessageEmbed()
@@ -17,5 +16,5 @@ module.exports = {
                 .addField('Error:', 'Insufficient permissions', true);
             message.channel.send(embed);
         }
-	},
+    },
 };
