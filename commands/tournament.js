@@ -3,17 +3,22 @@ module.exports = {
     description: 'Tournament commands. Creating a bracket is limited to @MasterOfPasta#9454 and @JuhJuhButt#3484. ',
     aliases: ['t', 'tourney', 'tournement', 'turnament', 'turnement', 'tournamant', 'tournement'],
     args: true,
-    usage: 'Way too much, use `/tournament help` instead',
+    usage: ' has way too much stuff, use `/tournament help` instead',
     execute(message, args, Discord) {
         const fs = require('fs');
+        const fse = require('fs-extra');
+        const {JuhJuhButtID, TannmannID} = require('../info/config.json');
+        const errorReplies = require('../info/errors.json')
         switch (args[0]) {
             case 'b':
             case 'bracket':
                 switch (args[1]) {
                     case 'c':
                     case 'create':
-                        if (message.member.id === '594237906609242124' || message.member.id === '268138992606773248') {
-                            if (args[2]) { let fA = args[2] } else {
+                        if (message.member.id === JuhJuhButtID || message.member.id === TannmannID) {
+                            if (args[2]) {
+                                let fA = args[2]
+                            } else {
                                 const embed = new Discord.MessageEmbed()
                                     .setTitle('File an issue')
                                     .setURL('https://joelne.digital/BBissue')
@@ -23,31 +28,6 @@ module.exports = {
                                     .addField('Error:', 'Insufficient information', true);
                                 message.channel.send(embed);
                             }
-                            if (args[3] === 'true' || args[3] === 'false') { let iB = args[3] } else { let iB = false }
-                            const bracket = {
-                                "fighterAmount": fA,
-                                "isBoss": iB
-                            }
-                            const bracketWrite = JSON.stringify(bracket, null, 4);
-                            fs.writeFile('../info/tournament/bracket.json', bracketWrite, err => {
-                                if (err) {
-                                    const embed = new Discord.MessageEmbed()
-                                        .setTitle('New bracket')
-                                        .setColor('#ff0000')
-                                        .setAuthor(message.member.nickname, message.author.avatarURL())
-                                        .setDescription('It didn\'t work. :(')
-                                        .addField('Error:', err, true);
-                                    message.channel.send(embed);
-                                } else {
-                                    const embed = new Discord.MessageEmbed()
-                                        .setTitle('New bracket')
-                                        .setColor('#00ff00')
-                                        .setAuthor(message.member.nickname, message.author.avatarURL())
-                                        .setDescription('It worked!')
-                                        .addField('Success:', `Wrote ${bracketWrite} successfully.`, true);
-                                    message.channel.send(embed);
-                                }
-                            })
                         } else {
                             const embed = new Discord.MessageEmbed()
                                 .setTitle('File an issue')
@@ -155,6 +135,10 @@ module.exports = {
                         message.channel.send(embed)
                         break;
                 }
+            case 'h':
+            case 'help':
+                message.channel.send('so basically this command isnt done yet. you should probably pay attention to joel when he says not to use it.')
+                break;
             default:
                 const embed = new Discord.MessageEmbed()
                     .setTitle('File an issue')

@@ -11,8 +11,8 @@ module.exports = {
     if (!args.length) {
       const embed1 = new Discord.MessageEmbed()
         .setTitle('Stuff you can do with me')
-        .setColor('#0000ff')
-        .setDescription('Send \`${prefix}help [thing]\` to get info on a specific command')
+        .setColor('#03b1fc')
+        .setDescription(`Send \`${prefix}help [thing]\` to get info on a specific command`)
         .addField('Commands', commands.map(command => command.name).join('\n '), true);
       message.channel.send(embed1)
         .catch(error => {
@@ -37,14 +37,14 @@ module.exports = {
         .setColor('#ff0000')
         .setAuthor(message.member.nickname, message.author.avatarURL())
         .setDescription(errorReplies[Math.floor(Math.random() * errorReplies.length)])
-        .addField('Error:', 'Command not found', true);
+        .addField('Error:', 'Command not found/invalid syntax', true);
       message.channel.send(embed);
       return;
     }
 
     const embed2 = new Discord.MessageEmbed()
       .setTitle(command.name)
-      .setColor('#0000ff');
+      .setColor('#03b1fc');
 
     if (command.aliases) embed2.addField(`Aliases`, command.aliases.join(', '), false);
     if (command.description) embed2.addField(`Description`, command.description, false);

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const fse = require('fs-extra');
 const Discord = require(`discord.js`);
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
@@ -73,7 +74,7 @@ bot.on(`message`, message => {
 	}
 
 	try {
-		command.execute(message, args, Discord, info);
+		command.execute(message, args, Discord);
 	} catch (error) {
 		const embed = new Discord.MessageEmbed()
 			.setTitle('File an issue')

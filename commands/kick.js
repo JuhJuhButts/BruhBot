@@ -2,7 +2,6 @@ module.exports = {
 	name: 'kick',
 	description: 'Kicks target from The Bruh Chat',
 	aliases: ['k'],
-	guildOnly: true,
 	execute(message, args, Discord) {
 		const { kickReplies } = require('../info/randomMessages.json');
 		const embed = new Discord.MessageEmbed()

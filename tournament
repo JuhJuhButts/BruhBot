@@ -2,7 +2,6 @@ Legend: - is one level deeper
 
 -Bracket
 --Create (args: number of fighters, boss (boolean))
---Stir
 --Add (args: target)
 
 -Fighter

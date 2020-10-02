@@ -2,7 +2,7 @@ module.exports = {
     name: 'role',
     description: 'add or remove a role',
     aliases: ['r'],
-    usage: '<+ | -> <role>',
+    usage: ' <+ | -> <role>',
     args: true,
     execute(message, args, Discord) {
         const JsonFind = require('json-find');
@@ -34,5 +34,5 @@ module.exports = {
             }
         }
         message.channel.send(embed);
-	},
+    },
 };
