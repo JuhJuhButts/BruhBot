@@ -4,7 +4,7 @@ const Discord = require(`discord.js`);
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 const { prefix, token } = require(`./info/config.json`);
-const { errorReplies } = require(`./info/errors.json`);
+const errorReplies = require(`./info/errors.json`);
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
