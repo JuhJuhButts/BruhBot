@@ -1,6 +1,6 @@
 # BruhBot
 
-Commits in the master branch will reflect a finished/polished version of the bot, while commits in the working-copy branch will reflect my current modifications to the bot (will not always be real time)
+Commits in the [master branch](https://github.com/JuhJuhButts/BruhBot) will reflect a finished/polished version of the bot, while commits in the [working-copy branch](https://github.com/JuhJuhButts/BruhBot/tree/working-copy) will reflect my current modifications to the bot (will not always be real time)
 
 ## To-do list
 

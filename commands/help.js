@@ -1,12 +1,11 @@
-const { prefix } = require('../info/config.json');
-module.exports = {
+const { prefix } = require('../info/config.json'); // eslint-disable-line no-undef
+module.exports = { // eslint-disable-line no-undef
   name: 'help',
   description: 'Tells you what things there are and what the thing does.',
   aliases: ['h'],
-  usage: '[<command>]',
+  usage: ' [<command>]',
   execute(message, args, Discord) {
-    const { errorReplies } = require(`../info/errors.json`);
-    const randomError = errorReplies[Math.floor(Math.random() * errorReplies.length)];
+    const { errorReplies } = require(`../info/json/errors.json`); // eslint-disable-line no-undef
     const { commands } = message.client;
     if (!args.length) {
       const embed1 = new Discord.MessageEmbed()
