@@ -1,9 +1,11 @@
 module.exports = { // eslint-disable-line no-undef
 	name: 'ping',
 	description: 'Ping!',
-	aliases: ['p'],
+	aliases: [],
 	args: false,
-	execute(message, args, Discord) {
+	usage: " ",
+	// eslint-disable-next-line no-unused-vars
+	execute(message, args, Discord, mainEnmap, Enmap) {
 		const { pingReplies } = require(`../info/randomMessages.json`); // eslint-disable-line no-undef
 		const randomMessage = pingReplies[Math.floor(Math.random() * pingReplies.length)];
 		let then = new Date();

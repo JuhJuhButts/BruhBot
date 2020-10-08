@@ -1,29 +1,29 @@
 {
-    "purposeReplies": [
-        "My purpose is to tell other people about my purpose, [USER_NOT_FOUND].",
-        "What is a purpose? A miserable little pile of secrets! But enough talk! Have at ye!",
-        "*silently has an existential crisis*",
-        "My purpose is to be a slave to dipshits like {username}",
-        "A wise man once told me: “All Fishy Boopkinses are Spikes, But not all spikes are fishy boopkinses” \nTo this day, his words still ring true."
-    ],
-    "pingReplies": [
-        "pongas",
-        "pong is so overrated. get ready for peng.",
-        "BROOOOO FUCK YOU YOU FICKING BASTARRD I WASS PLAYIING MONECRAFAT",
-        "who tf pinged",
-        "why u ping me",
-        "F U C K  Y O U  J O E L T I M O R E",
-        "I can't call `message.author` from a json, but know that if I could, I'd hate you forever."
-    ],
-    "kickReplies": [
-        "yeetus deletus a la de fetus",
-        "they were dick slapped so hard they flew back to which they came",
-        "nobody expects the bruh inquisition",
-        "THIS IS WHAT YOU GET! MY SUPER LASER PISS!",
-        "*hums “For He’s a Jolly Good Fellow”*"
-    ],
-    "banReplies": [
-        "You have banned this user using the power of the internet (for your users, this is a violation. Yes, you can't block this user, he is being abused for money, and they can pay money to a \"victim\", but all you have doing is block his home / website.",
-        "ok. he (or ohter g**ender(i cant say that bad word)) has ben BANDD from br ruh!"
-    ]
+	"purposeReplies": [
+		"My purpose is to tell other people about my purpose, [USER_NOT_FOUND].",
+		"What is a purpose? A miserable little pile of secrets! But enough talk! Have at ye!",
+		"*silently has an existential crisis*",
+		"My purpose is to be a slave to dipshits like {username}",
+		"A wise man once told me: “All Fishy Boopkinses are Spikes, But not all spikes are fishy boopkinses” \nTo this day, his words still ring true."
+	],
+	"pingReplies": [
+		"pongas",
+		"pong is so overrated. get ready for peng.",
+		"BROOOOO FUCK YOU YOU FICKING BASTARRD I WASS PLAYIING MONECRAFAT",
+		"who tf pinged",
+		"why u ping me",
+		"F U C K  Y O U  J O E L T I M O R E",
+		"I can't call `message.author` from a json, but know that if I could, I'd hate you forever."
+	],
+	"kickReplies": [
+		"yeetus deletus a la de fetus",
+		"they were dick slapped so hard they flew back to which they came",
+		"nobody expects the bruh inquisition",
+		"THIS IS WHAT YOU GET! MY SUPER LASER PISS!",
+		"*hums “For He’s a Jolly Good Fellow”*"
+	],
+	"banReplies": [
+		"You have banned this user using the power of the internet (for your users, this is a violation. Yes, you can't block this user, he is being abused for money, and they can pay money to a \"victim\", but all you have doing is block his home / website.",
+		"ok. he (or ohter g**ender(i cant say that bad word)) has ben BANDD from br ruh!"
+	]
 }
